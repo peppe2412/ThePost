@@ -1,0 +1,11 @@
+.logout{
+    transition: 0.3s;
+}
+
+.logout:hover{
+    color: #ce0303;
+}
+
+footer{
+    margin-top: 400px;
+}
