@@ -27,11 +27,20 @@
                     </div>
                 @endif
                 <div class="ml-4 mt-4">
-                    <p>Categoria: <a
-                            href="{{ route('article-category', $article->category) }}">{{ $article->category->name }}</a>
-                    </p>
+                    @if ($article->category)
+                        <p>Categoria: <a
+                                href="{{ route('article-category', $article->category) }}">{{ $article->category->name }}</a>
+                        </p>
+                    @else
+                        <p>Nessuna Categoria</p>
+                    @endif
                     <p>Redatto il: {{ $article->created_at->format('d/m/Y') }}</p>
                     <p>Da: <a href="">{{ $article->user->name }}</a></p>
+                    <small>
+                        @foreach ($tags as $tag)
+                            #{{ $tag->name }}
+                        @endforeach
+                    </small>
                 </div>
             </div>
         </div>

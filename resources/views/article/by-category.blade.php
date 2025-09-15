@@ -18,8 +18,17 @@
                         </div>
                         <p class="text-lg text-wrap">{{ $article->body }}</p>
                         <div class="mt-5">
+                            @if ($article->category)
+                                <p>Categoria: <a
+                                        href="{{ route('article-category', $article->category) }}">{{ $article->category->name }}</a>
+                                </p>
+                            @else
+                                <p>Nessuna Categoria</p>
+                            @endif
                             <p>Redatto il: {{ $article->created_at->format('d/m/Y') }}</p>
-                            <p>Da: <a href="{{ route('article-redactor', $article->user) }}">{{ $article->user->name }}</a></p>
+                            <p>Da: <a
+                                    href="{{ route('article-redactor', $article->user) }}">{{ $article->user->name }}</a>
+                            </p>
                         </div>
                     </div>
                 </a>

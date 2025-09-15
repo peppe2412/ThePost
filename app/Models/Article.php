@@ -34,4 +34,9 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+      public function tags(): BelongsTo
+    {
+        return $this->belongsTo(Tag::class);
+    }
 }

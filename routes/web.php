@@ -18,6 +18,11 @@ Route::middleware('admin')->group(function () {
         Route::patch('/admin/{user}/set-admin', 'setAdmin')->name('set-admin');
         Route::patch('/admin/{user}/set-revisor', 'setRevisor')->name('set-revisor');
         Route::patch('/admin/{user}/set-writer', 'setWriter')->name('set-writer');
+        Route::put('/admin/edit/category/{category}', 'editCategory')->name('edit-category');
+        Route::delete('/admin/delete/category/{category}', 'deleteCategory')->name('delete-category');
+        Route::post('/admin/category/store', 'storeCategory')->name('create-category');
+        Route::put('/admin/edit/tag/{tag}', 'editTag')->name('edit-tag');
+        Route::delete('/admin/delete/tag/{tag}', 'deleteTag')->name('delete-tag');
     });
 });
 

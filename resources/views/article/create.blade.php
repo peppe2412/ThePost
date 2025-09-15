@@ -49,7 +49,17 @@
                             <span class="tw-form-span-message">{{ $message }}</span>
                         @enderror
                     </div>
-                    <button type="submit" class="bg-blue-600 text-white p-2 rounded w-full cursor-pointer text-lg mt-4">Inserisci Articolo</button>
+                    <div class="mb-5">
+                        <label for="tag" class="tw-form-label-create-article">Tag</label>
+                        <input name="tag" type="text" id="tag" value="{{ old('tags') }}" class="tw-form-input-create-article" />
+                        <small>Dividi ogni tag con una virgola</small>
+                        @error('tag')
+                            <span class="tw-form-span-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-600 text-white p-2 rounded w-full cursor-pointer text-lg mt-4">Inserisci
+                        Articolo</button>
                 </form>
             </div>
         </div>
