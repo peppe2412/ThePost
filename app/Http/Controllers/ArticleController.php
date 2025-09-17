@@ -77,7 +77,7 @@ class ArticleController extends Controller implements HasMiddleware
         }
 
         foreach($tags as $tag){
-            $newTag = Tag::udateOrCreate([
+            $newTag = Tag::updateOrCreate([
                 'name' => strtolower($tag)
             ]);
 

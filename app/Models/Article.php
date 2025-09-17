@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Scout\Searchable;
 
 class Article extends Model
@@ -35,8 +36,8 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
-      public function tags(): BelongsTo
+      public function tags(): BelongsToMany
     {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
 }
