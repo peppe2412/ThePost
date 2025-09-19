@@ -41,6 +41,11 @@
                             #{{ $tag->name }}
                         @endforeach
                     </small>
+                    <div>
+                        <small>
+                            Tempo di lettura: {{ $article->readDuration() }} min
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
