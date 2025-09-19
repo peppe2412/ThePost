@@ -42,7 +42,7 @@
             <h2 class="text-center mb-6">
                 Tag
             </h2>
-            <x-metainfo-table :metaInfos="$tags" role="tag" />
+            <x-metainfo-table :metaInfos="$tags" role="tags" />
         </div>
     </div>
 

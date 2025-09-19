@@ -22,7 +22,7 @@
                     <td class="px-[150px]">{{ $metaInfo->id }}</td>
                     <td class="px-24 py-4">{{ $metaInfo->name }}</td>
                     <td class="px-[150px] py-4">{{ $metaInfo->articles->count() }}</td>
-                    @if ($metaInfo == 'tag')
+                    @if ($metaInfo == 'tags')
                         <td class="px-[150px] py-4">
                             <form action="{{ route('edit-tag', ['tag' => $metaInfo]) }}" method="POST">
                                 @csrf

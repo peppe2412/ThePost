@@ -37,7 +37,7 @@
                     <p>Redatto il: {{ $article->created_at->format('d/m/Y') }}</p>
                     <p>Da: <a href="">{{ $article->user->name }}</a></p>
                     <small>
-                        @foreach ($tags as $tag)
+                        @foreach ($article->tags as $tag)
                             #{{ $tag->name }}
                         @endforeach
                     </small>

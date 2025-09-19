@@ -42,7 +42,7 @@
                                         href="{{ route('article-redactor', $article->user) }}">{{ $article->user->name }}</a>
                                 </p>
                                 <small>
-                                    @foreach ($tags as $tag)
+                                    @foreach ($article->tags as $tag)
                                         #{{ $tag->name }}
                                     @endforeach
                                 </small>

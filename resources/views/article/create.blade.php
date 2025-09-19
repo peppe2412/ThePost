@@ -51,7 +51,7 @@
                     </div>
                     <div class="mb-5">
                         <label for="tag" class="tw-form-label-create-article">Tag</label>
-                        <input name="tag" type="text" id="tag" value="{{ old('tags') }}" class="tw-form-input-create-article" />
+                        <input name="tags" type="text" id="tags" value="{{ old('tags') }}" class="tw-form-input-create-article" />
                         <small>Dividi ogni tag con una virgola</small>
                         @error('tag')
                             <span class="tw-form-span-message">{{ $message }}</span>
