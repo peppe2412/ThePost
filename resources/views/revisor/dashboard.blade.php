@@ -15,7 +15,7 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli da revisionare
             </h2>
-            <x-articles-table :articles="$unserevisorArticles" />
+            <x-articles-table :articles="$unrevisorArticles" />
         </div>
     </div>
 
@@ -24,7 +24,7 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli pubblicati
             </h2>
-            <x-articles-table :articles="$acceptedArticles"/>
+            <x-articles-table :articles="$acceptArticles"/>
         </div>
     </div>
 
@@ -33,7 +33,7 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli respinti
             </h2>
-            <x-articles-table :articles="$refuseArticles"/>
+            <x-articles-table :articles="$rejectArticles"/>
         </div>
     </div>
 

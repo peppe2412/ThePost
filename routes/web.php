@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\PublicController;
-use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\WriterController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 Route::controller(PublicController::class)->group(function () {
     Route::get('/', 'home')->name('home');
@@ -45,8 +46,16 @@ Route::controller(ArticleController::class)->group(function () {
 
 Route::middleware('writer')->group(function () {
     Route::controller(ArticleController::class)->group(function () {
-        Route::get('/writer/dashboard', 'dashboard')->name('writer-dashboard');
         Route::get('/create/article', 'create')->name('create-article');
         Route::post('/article/store', 'store')->name('article-store');
+        Route::get('/article/edit/{article}', 'edit')->name('article-edit');
+        Route::put('/article/update/{article}', 'update')->name('article-update');
+        Route::delete('/article/delete/{article}', 'destroy')->name('article-delete');
+    });
+});
+
+Route::middleware('writer')->group(function () {
+    Route::controller(WriterController::class)->group(function () {
+        Route::get('/writer/dashboard', 'dashboard')->name('writer-dashboard');
     });
 });
