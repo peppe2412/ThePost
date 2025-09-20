@@ -49,3 +49,11 @@
 .tw-form-span-message{
     @apply bg-red-300 p-1 rounded border-1 border-red-400 mt-2 text-white
 }
+
+.tw-message-span{
+    @apply bg-green-300 w-[400px] text-center p-[20px] border border-green-500 text-xl text-white 
+}
+
+.tw-alert-span{
+    @apply bg-red-300 w-[400px] text-center p-[20px] border border-red-500 text-xl text-white 
+}

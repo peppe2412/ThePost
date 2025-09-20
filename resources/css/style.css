@@ -6,6 +6,43 @@
     color: #ce0303;
 }
 
+.effect-img-home-writer{
+    animation: img-writer 0.8s linear;
+}
+
+@keyframes img-writer{
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.scroll{
+    overflow: hidden;
+}
+
+#containerScroll{
+    display: flex;
+    animation: scrollImage 10s linear infinite;
+    width: fit-content;
+}
+
+#containerScroll img{
+    width: 300px;
+    margin-left: 30px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+@keyframes scrollImage{
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(-100%);}
+}
+
 footer{
     margin-top: 400px;
 }
