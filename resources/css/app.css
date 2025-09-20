@@ -12,6 +12,11 @@
 
 @import './style.css';
 
+
+.tw-hover-underline-nav{
+    @apply hover:underline
+}
+
 .tw-form-input-auth{
     @apply border-2 border-gray-950 rounded p-[2px] mt-2 w-[300px]
 }
