@@ -33,23 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
         
     ];
 
-    function scrollImage() {
-        let container = document.querySelector("#containerScroll");
-        container.innerHTML = "";
+    function ImagesScroll(repeat = 0) {
+    let container = document.querySelector('#containerScroll')
+    container.innerHTML = ''
 
-        let imgUse = [];
-        for (let i = 0; i < 8; i++) {
-            imgUse.push(...imgScroll);
-        }
-
-
-        imgUse.forEach((src, index) => {
-            let img = document.createElement("img");
-            img.src = src;
-            img.alt = `${index}`;
-            container.appendChild(img);
-        });
+    let imagesUse = []
+    for (let i = 0; i < repeat; i++){
+        imagesUse = imagesUse.concat(imgScroll)
     }
 
-    window.onload = () => scrollImage();
+    imagesUse.forEach((src, index) => {
+        let image = document.createElement('img')
+        image.src = src
+        image.alt = `${index}`
+        container.appendChild(image)
+    })
+
+    container.addEventListener('scroll', () => {
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+            container.scrollLeft = 0
+        }
+    })
+}
+
+window.onload = () => ImagesScroll(16)
 });

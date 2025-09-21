@@ -25,13 +25,13 @@
     overflow: hidden;
 }
 
-#containerScroll{
-    display: flex;
-    animation: scrollImage 10s linear infinite;
+.container-scroll{
+    display: inline-flex;
+    animation: scrollImage 10s;
     width: fit-content;
 }
 
-#containerScroll img{
+.container-scroll img{
     width: 300px;
     margin-left: 30px;
     border-radius: 20px;
@@ -39,8 +39,8 @@
 }
 
 @keyframes scrollImage{
-    0%{transform: translateX(0%);}
-    100%{transform: translateX(-100%);}
+    from{transform: translateX(0%);}
+    to{transform: translateX(-100%);}
 }
 
 footer{

@@ -51,7 +51,7 @@
 
 
     <div class="py-24 scroll">
-        <div id="containerScroll"></div>
+        <div class="container-scroll" id="containerScroll"></div>
     </div>
 
     <div class="flex justify-center">
