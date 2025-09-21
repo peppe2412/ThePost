@@ -21,8 +21,8 @@
     @apply border-2 border-gray-950 rounded p-[4px] mt-2 w-[500px] text-lg;
 }
 
-.tw-form-input-auth-login{
-    @apply border-2 border-gray-950 rounded p-[3px] mt-2 w-[300px]
+.tw-form-input-auth-login {
+    @apply border-2 border-gray-950 rounded p-[3px] mt-2 w-[300px];
 }
 
 .tw-form-label-auth {
@@ -33,8 +33,8 @@
     @apply bg-sky-500 hover:bg-sky-400 w-32 cursor-pointer p-2 rounded-xl text-lg text-white font-bold;
 }
 
-.tw-button-auth-login{
-    @apply bg-sky-500 hover:bg-sky-400 w-full cursor-pointer p-1 text-white text-lg rounded
+.tw-button-auth-login {
+    @apply bg-sky-500 hover:bg-sky-400 w-full cursor-pointer p-1 text-white text-lg rounded;
 }
 
 .tw-dropdown-auth {
@@ -56,6 +56,18 @@
 
 .tw-form-input-create-article {
     @apply border-2 border-gray-950 w-full rounded p-2;
+}
+
+.tw-img-careers {
+    @apply w-[400px] shadow-lg rounded-2xl;
+}
+
+.tw-form-careers {
+    @apply border border-gray-300 text-xl p-5 w-[40%] shadow-lg rounded-xl;
+}
+
+.tw-label-careers {
+    @apply block text-lg;
 }
 
 .tw-form-span-message {
