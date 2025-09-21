@@ -10,28 +10,28 @@
                 @csrf
                 <div class="mb-5">
                     <label for="name" class="tw-form-label-auth">Username</label>
-                    <input name="name" type="text" id="username" class="tw-form-input-auth" />
+                    <input name="name" type="text" id="username" class="tw-form-input-auth-register" />
                 </div>
                 <div class="mb-5">
                     <label for="email" class="tw-form-label-auth">Email</label>
-                    <input name="email" type="email" id="email" class="tw-form-input-auth" />
+                    <input name="email" type="email" id="email" class="tw-form-input-auth-register" />
                 </div>
                 <div class="mb-5">
                     <label for="password" class="tw-form-label-auth">Password</label>
-                    <input name="password" type="password" id="password" class="tw-form-input-auth" />
+                    <input name="password" type="password" id="password" class="tw-form-input-auth-register" />
                 </div>
                 <div class="mb-5">
                     <label for="password_confirmation" class="tw-form-label-auth">Conferma Password</label>
                     <input name="password_confirmation" type="password_confirmation" id="password_confirmation"
-                        class="tw-form-input-auth" />
+                        class="tw-form-input-auth-register" />
                 </div>
-                <button type="submit"
-                    class="bg-sky-500 font-bold w-full cursor-pointer p-2 rounded text-white">Registrati</button>
-                <div class="flex justify-center mt-7">
+                <div class="flex justify-end">
+                    <button type="submit" class="tw-button-auth-register">Registrati</button>
+                </div>
+                <div class="flex justify-center mt-10">
                     <div class="flex flex-col">
-                        <p>Hai già un account?</p>
-                        <a class="text-center hover:underline text-sky-500"
-                            href="{{ route('login') }}">Accedi</a>
+                        <h4 class="text-xl">Hai già un account?</h4>
+                        <a class="text-center hover:underline text-sky-500 text-lg" href="{{ route('login') }}">Accedi</a>
                     </div>
                 </div>
             </form>

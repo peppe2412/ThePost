@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,54 +6,66 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 }
 
-@import './style.css';
+@import "./style.css";
 
-
-.tw-hover-underline-nav{
-    @apply hover:underline
+.tw-hover-underline-nav {
+    @apply hover:underline;
 }
 
-.tw-form-input-auth{
-    @apply border-2 border-gray-950 rounded p-[2px] mt-2 w-[300px]
+.tw-form-input-auth-register {
+    @apply border-2 border-gray-950 rounded p-[4px] mt-2 w-[500px] text-lg;
 }
 
-.tw-form-label-auth{
-    @apply text-sm block
+.tw-form-input-auth-login{
+    @apply border-2 border-gray-950 rounded p-[3px] mt-2 w-[300px]
 }
 
-.tw-dropdown-auth{
-    @apply relative
+.tw-form-label-auth {
+    @apply text-xl block;
 }
 
-.tw-dropdown-auth::after{
-    content: '';
-    @apply absolute left-0 bottom-0 w-0 h-[3px] bg-gray-900 transition-all duration-300
+.tw-button-auth-register {
+    @apply bg-sky-500 hover:bg-sky-400 w-32 cursor-pointer p-2 rounded-xl text-lg text-white font-bold;
 }
 
-.tw-dropdown-auth:hover::after{
-     @apply w-full
+.tw-button-auth-login{
+    @apply bg-sky-500 hover:bg-sky-400 w-full cursor-pointer p-1 text-white text-lg rounded
 }
 
-.tw-form-label-create-article{
-    @apply text-xl block mb-3
+.tw-dropdown-auth {
+    @apply relative;
 }
 
-.tw-form-input-create-article{
-    @apply border-2 border-gray-950 w-full rounded p-2
+.tw-dropdown-auth::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 h-[3px] bg-gray-900 transition-all duration-300;
 }
 
-.tw-form-span-message{
-    @apply bg-red-300 p-1 rounded border-1 border-red-400 mt-2 text-white
+.tw-dropdown-auth:hover::after {
+    @apply w-full;
 }
 
-.tw-message-span{
-    @apply bg-green-300 w-[400px] text-center p-[20px] border border-green-500 text-xl text-white 
+.tw-form-label-create-article {
+    @apply text-xl block mb-3;
 }
 
-.tw-alert-span{
-    @apply bg-red-300 w-[400px] text-center p-[20px] border border-red-500 text-xl text-white 
+.tw-form-input-create-article {
+    @apply border-2 border-gray-950 w-full rounded p-2;
+}
+
+.tw-form-span-message {
+    @apply bg-red-300 p-1 rounded border-1 border-red-400 mt-2 text-white;
+}
+
+.tw-message-span {
+    @apply bg-green-300 w-[400px] text-center p-[20px] border border-green-500 text-xl text-white;
+}
+
+.tw-alert-span {
+    @apply bg-red-300 w-[400px] text-center p-[20px] border border-red-500 text-xl text-white;
 }
