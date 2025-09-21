@@ -15,7 +15,7 @@
                     <label for="password" class="tw-form-label-auth">Password</label>
                     <input name="password" type="password" id="password" class="tw-form-input-auth-login" />
                 </div>
-                <div class="flex justify-end">
+                <div>
                     <button type="submit" class="tw-button-auth-login">Accedi</button>
                 </div>
                 <div class="flex justify-center mt-10">
