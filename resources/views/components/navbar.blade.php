@@ -1,15 +1,15 @@
 <nav class="bg-white border-gray-200 shadow">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-       <h4 class="text-5xl mb-4">The Post</h4>
+        <h4 class="text-5xl mb-4">The Post</h4>
         <div class="w-full py-8">
             <form action="{{ route('article-search') }}" method="GET">
                 @csrf
                 <div class="flex justify-center">
-                    <input class="bg-white rounded-s-xl p-4 w-[700px] border border-gray-700" name="query"
-                        type="search" placeholder="Cerca articolo">
-                    <button class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700" type="submit"><svg
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-7">
+                    <input class="bg-white rounded-s-xl p-4 w-[700px] border border-gray-700" name="query" type="search"
+                        placeholder="Cerca articolo">
+                    <button class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700"
+                        type="submit"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="size-7">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
@@ -25,7 +25,8 @@
                         aria-current="page">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('article-index') }}" class="h-14 flex items-center text-lg tw-hover-underline-nav">Articoli</a>
+                    <a href="{{ route('article-index') }}"
+                        class="h-14 flex items-center text-lg tw-hover-underline-nav">Articoli</a>
                 </li>
                 @guest
                     <button command="show-modal" commandfor="dialog"
@@ -96,16 +97,18 @@
                                 @if (Auth::user()->is_admin)
                                     <a href="{{ route('admin-dashboard') }}" class="block mb-1 tw-dropdown-auth">Area
                                         riservata</a>
+                                    <hr class="mb-2 mt-2">
                                 @endif
                                 @if (Auth::user()->is_revisor)
                                     <a href="{{ route('revisor-dashboard') }}" class="block mb-1 tw-dropdown-auth">Area
                                         riservata</a>
+                                    <hr class="mb-2 mt-2">
                                 @endif
                                 @if (Auth::user()->is_writer)
                                     <a href="{{ route('writer-dashboard') }}" class="block mb-1 tw-dropdown-auth">Area
                                         riservata</a>
+                                    <hr class="mb-2 mt-2">
                                 @endif
-                                <hr class="mb-2 mt-2">
                                 <a href="" class="logout"
                                     onclick="event.preventDefault(); document.querySelector('#logout').submit();">Logout</a>
                                 <form action="{{ route('logout') }}" method="POST" id="logout">

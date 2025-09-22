@@ -9,8 +9,10 @@
     </header>
 
     @if (session('message'))
-        <div class="bg-green-400">
-            {{ session('message') }}
+        <div class="flex justify-center py-8">
+            <div class="tw-message-span">
+                {{ session('message') }}
+            </div>
         </div>
     @endif
 
@@ -20,7 +22,9 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli in attesa di revisione
             </h2>
-            <x-writer-articles-table :articles="$unrevisorArticles" />
+            <div class="w-full">
+                <x-writer-articles-table :articles="$unrevisorArticles" />
+            </div>
         </div>
     </div>
 
@@ -29,7 +33,9 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli pubblicati
             </h2>
-            <x-writer-articles-table :articles="$acceptArticles" />
+            <div class="w-full">
+                <x-writer-articles-table :articles="$acceptArticles" />
+            </div>
         </div>
     </div>
 
@@ -38,7 +44,9 @@
             <h2 class="text-center text-2xl mb-10">
                 Articoli respinti
             </h2>
-            <x-writer-articles-table :articles="$rejectArticles" />
+            <div class="w-full">
+                <x-writer-articles-table :articles="$rejectArticles" />
+            </div>
         </div>
     </div>
 

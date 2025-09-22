@@ -66,9 +66,7 @@
                 src="https://t4.ftcdn.net/jpg/03/70/74/29/360_F_370742959_oafsXZ5nJ0gneXindh0pk6VE5lbtpfBT.jpg"
                 alt="Writer">
             <div class="w-full flex items-center px-10">
-                <p class="text-2xl">Precisione e attenzione ai dettagli sono il tuo punto di forza? Allora diventa
-                    revisore. Ti occuperai di controllare e migliorare i testi dei writer, garantendo qualità, chiarezza
-                    e correttezza dei contenuti pubblicati</p>
+                <p class="text-2xl">Se ami scrivere e raccontare il mondo attraverso le parole, questo è il ruolo che fa per te. Potrai pubblicare articoli su temi come politica, economia, sport, musica, tecnologia e motori, condividendo le tue idee con una community attiva e appassionata.</p>
             </div>
         </div>
     </div>

@@ -18,11 +18,11 @@
                     <div class="mt-5 mb-5 flex justify-evenly">
                         <form action="{{ route('revisor-article-accept', $article) }}" method="POST">
                             @csrf
-                            <button>Accetta articolo</button>
+                            <button class="bg-green-400 p-2 rounded cursor-pointer hover:bg-green-200 text-lg">Accetta articolo</button>
                         </form>
                         <form action="{{ route('revisor-article-reject', $article) }}" method="POST">
                             @csrf
-                            <button>Rifiuta articolo</button>
+                            <button class="bg-red-400 p-2 rounded cursor-pointer hover:bg-red-200 text-lg">Rifiuta articolo</button>
                         </form>
                     </div>
                 @endif
