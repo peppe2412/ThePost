@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Dropdown navbar
     function toggleDropdown() {
         let dropdown = document.querySelector("#dropdown");
         dropdown.classList.toggle("hidden");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.toggleDropdown = toggleDropdown;
 
+    // Effetto immagine writer home
     let img_writer_effect = document.querySelector("#imgWriterHome");
 
     window.addEventListener("scroll", () => {
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Effetto scroll home
     let imgScroll = [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHXyzV23BMz6dEBxDc5oTS6-z0Lm9bMQpbZg&s",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdM9MEQ0ExL1PmInT3U5I8v63YXBEdoIT0Q&s",
@@ -57,33 +60,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.onload = () => ImagesScroll(4);
 
+    // Effetto immagini pagina careers
     let imgCareers = document.querySelectorAll(".careers-img");
 
-    let observer = new IntersectionObserver((entries)=>{
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('effect-careers-img')
-                entry.target.classList.remove('opacity-0')
-            }
-        })
-    }, {
-        threshold : 0.2
-    })
-
-    imgCareers.forEach(imgCar => observer.observe(imgCar))
-
-    let formCareersLink = document.querySelector('#link-form-careers')
-    let formCareers = document.querySelector('#careers-form')
-    
-    window.addEventListener('scroll', ()=>{
-        let getBound = formCareers.getBoundingClientRect()
-
-        if(getBound.bottom > 0 && getBound.top < window.innerHeight){
-            formCareersLink.classList.add('opacity-0')
-        }else{
-            formCareersLink.classList.remove('opacity-0')
+    let observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("effect-careers-img");
+                    entry.target.classList.remove("opacity-0");
+                }
+            });
+        },
+        {
+            threshold: 0.2,
         }
-    })
-    
+    );
 
+    imgCareers.forEach((imgCar) => observer.observe(imgCar));
+
+    //Link careers form
+    let formCareersLink = document.querySelector("#link-form-careers");
+    let formCareers = document.querySelector("#careers-form");
+
+    window.addEventListener("scroll", () => {
+        let getBound = formCareers.getBoundingClientRect();
+
+        if (getBound.top < window.innerHeight) {
+            formCareersLink.classList.add("opacity-0");
+        } else {
+            formCareersLink.classList.remove("opacity-0");
+        }
+    });
 });
