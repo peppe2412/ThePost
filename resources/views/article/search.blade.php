@@ -6,10 +6,12 @@
     </header>
 
     <div class="container py-5">
-        <div class="flex justify-evenly mx-5">
-            @foreach ($articles as $article)
+        <div class="grid md:grid-cols-1 gap-3">
+            @forelse ($articles as $article)
                 <x-article-card :article="$article"/>
-            @endforeach
+            @empty
+                <p class="text-center text-2xl">Sembra che non ci siano articoli corrispondenti alla ricerca</p>
+            @endforelse
         </div>
     </div>
 
