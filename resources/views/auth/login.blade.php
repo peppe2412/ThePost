@@ -18,6 +18,9 @@
                 <div>
                     <button type="submit" class="tw-button-auth-login">Accedi</button>
                 </div>
+                <div>
+                    <a href="{{ route('password.email') }}">Password dimenticata</a>
+                </div>
                 <div class="flex justify-center mt-10">
                     <div class="flex flex-col">
                         <h4 class="text-xl">Non hai un account?</h4>

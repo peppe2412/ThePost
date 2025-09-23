@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-5">
                     <label for="password_confirmation" class="tw-form-label-auth">Conferma Password</label>
-                    <input name="password_confirmation" type="password_confirmation" id="password_confirmation"
+                    <input name="password_confirmation" type="password" id="password_confirmation"
                         class="tw-form-input-auth-register" />
                 </div>
                 <div class="flex justify-end">
