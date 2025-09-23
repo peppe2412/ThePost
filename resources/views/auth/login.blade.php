@@ -15,16 +15,15 @@
                     <label for="password" class="tw-form-label-auth">Password</label>
                     <input name="password" type="password" id="password" class="tw-form-input-auth-login" />
                 </div>
-                <div>
-                    <button type="submit" class="tw-button-auth-login">Accedi</button>
-                </div>
-                <div>
-                    <a href="{{ route('password.email') }}">Password dimenticata</a>
+                <button type="submit" class="tw-button-auth-login">Accedi</button>
+                <div class="mt-7">
+                    <a class="underline text-sky-500" href="{{ route('password.email') }}">Password dimenticata</a>
                 </div>
                 <div class="flex justify-center mt-10">
                     <div class="flex flex-col">
                         <h4 class="text-xl">Non hai un account?</h4>
-                        <a class="text-center hover:underline text-sky-500 text-lg" href="{{ route('register') }}">Registrati</a>
+                        <a class="text-center hover:underline text-sky-500 text-lg"
+                            href="{{ route('register') }}">Registrati</a>
                     </div>
                 </div>
             </form>
