@@ -1,11 +1,11 @@
  <a href="{{ route('article-show', $article) }}">
-     <div class="shadow-lg w-[600px] p-4 rounded-2xl">
-         <div class="mt-2">
+     <div class="md:w-[50%] md:mx-auto p-4 border border-gray-400">
+         <div class="mt-2 flex justify-center">
              <img class="rounded" src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
          </div>
          <div class="mt-3 mb-5">
              <h3 class="text-3xl mb-4">{{ $article->title }}</h3>
-             <h4 class="text-2xl">{{ $article->subtitle }}</h4>
+             {{-- <h4 class="text-2xl">{{ $article->subtitle }}</h4> --}}
          </div>
          <div class="mt-5">
              @if ($article->category)
@@ -23,11 +23,11 @@
                      #{{ $tag->name }}
                  @endforeach
              </small>
-             <div>
+             {{-- <div>
                  <small>
                     Tempo di lettura: {{ $article->readDuration() }} min
                  </small>
-             </div>
+             </div> --}}
          </div>
      </div>
  </a>

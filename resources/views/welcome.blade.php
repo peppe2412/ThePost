@@ -66,9 +66,9 @@
 
 
     <div class="container py-24">
+        <h2 class="text-6xl text-center mb-5">Ultimi Annunci</h2>
         <div class="flex justify-center">
-            <div class="mt-10">
-                <h2 class="text-6xl text-center mb-5">Ultimi Annunci</h2>
+            <div class="grid md:grid-cols-1 gap-3">
                 @foreach ($articles as $article)
                     <x-article-card :article="$article" />
                 @endforeach

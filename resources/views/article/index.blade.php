@@ -6,10 +6,11 @@
     </header>
 
     <div class="container py-5">
-        <div class="flex justify-evenly mx-5">
+        <div class="grid md:grid-cols-1 gap-3">
             @foreach ($articles as $article)
-                <x-article-card :article="$article"/>
+                <x-article-card :article="$article" />
             @endforeach
+
         </div>
     </div>
 
