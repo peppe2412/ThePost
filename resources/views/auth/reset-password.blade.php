@@ -12,7 +12,7 @@
                     <input name="email" type="email" id="email" value="{{ old('email') }}"
                         class="tw-form-input-auth-register" />
                     @if ($errors->any())
-                        <div class="alert alert-danger mb-4">
+                        <div class="tw-form-span-message mb-4">
                             @foreach ($errors->all() as $error)
                                 {{ $error }}
                             @endforeach
@@ -23,7 +23,7 @@
                     <label for="password" class="tw-form-label-auth">Password</label>
                     <input name="password" type="password" id="password" class="tw-form-input-auth-register" />
                     @if ($errors->any())
-                        <div class="alert alert-danger mb-4">
+                        <div class="tw-form-span-message mb-4">
                             @foreach ($errors->all() as $error)
                                 {{ $error }}
                             @endforeach
@@ -35,7 +35,7 @@
                     <input name="password_confirmation" type="password" id="password_confirmation"
                         class="tw-form-input-auth-register" />
                     @if ($errors->any())
-                        <div class="alert alert-danger mb-4">
+                        <div class="tw-form-span-message mb-4">
                             @foreach ($errors->all() as $error)
                                 {{ $error }}
                             @endforeach
