@@ -7,6 +7,15 @@
    color: white;
 }
 
+.github-auth{
+    transition: 0.5s;
+}
+
+.github-auth:hover{
+    background-color: #2b3137;
+    color: white;
+}
+
 .logout {
     transition: 0.3s;
 }
