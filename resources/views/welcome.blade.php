@@ -20,7 +20,7 @@
 
     <header class="container py-10">
         <div class="flex justify-center">
-            <h1 class="text-[300px] font-bold">THE POST</h1>
+            <h1 class="text-[200px] font-bold fs-main">THE POST</h1>
         </div>
     </header>
 
@@ -29,7 +29,7 @@
             <div class="w-full">
                 <div class="flex justify-evenly">
                     <div class="w-[500px]">
-                        <p class="text-3xl">Benvenuto su <strong>THE POST</strong>, la piattaforma pensata per chi
+                        <p class="text-3xl">Benvenuto su <strong class="fs-main">THE POST</strong>, la piattaforma pensata per chi
                             scrive.
                             Qui
                             trovi
@@ -56,7 +56,7 @@
 
     <div class="flex justify-center">
         <div class="w-[50%]">
-            <p class="text-2xl">Su <strong>THE POST</strong> diamo spazio a ogni voce. Politica,
+            <p class="text-2xl">Su <strong class="fs-main">THE POST</strong> diamo spazio a ogni voce. Politica,
                 economia, sport, musica,
                 tecnologia, motori e molto altro: tanti mondi diversi uniti dalla stessa passione per la scrittura. Qui
                 ogni

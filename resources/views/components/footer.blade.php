@@ -51,8 +51,8 @@
             </div>
         </div>
         <div class="px-4 p-4 bg-white md:flex md:justify-between">
-            <span class="text-lg sm:text-center">©@php echo date('Y') @endphp <a href="https://flowbite.com/"><strong>THE
-                        POST™</strong></a>. Tutti i diritti sono riservati
+            <span class="text-lg sm:text-center">©@php echo date('Y') @endphp <a href="https://flowbite.com/"><strong class="fs-main">THE
+                        POST</strong>™</a>. Tutti i diritti sono riservati
             </span>
             <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
                 <a href="#" class="hover:text-gray-500">

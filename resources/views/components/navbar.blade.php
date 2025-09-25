@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 shadow">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <h4 class="text-5xl mb-4">The Post</h4>
+        <h4 class="text-5xl mb-4 fs-main">The Post</h4>
         <div class="w-full py-8">
             <form action="{{ route('article-search') }}" method="GET">
                 @csrf

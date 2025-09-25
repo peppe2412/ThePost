@@ -1,17 +1,21 @@
-.google-auth{
+.fs-main {
+    font-family: "Walter Turncoat", cursive;
+}
+
+.google-auth {
     transition: 0.5s;
 }
 
-.google-auth:hover{
-   background-color: #DB4437;
-   color: white;
+.google-auth:hover {
+    background-color: #db4437;
+    color: white;
 }
 
-.github-auth{
+.github-auth {
     transition: 0.5s;
 }
 
-.github-auth:hover{
+.github-auth:hover {
     background-color: #2b3137;
     color: white;
 }
