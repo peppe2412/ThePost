@@ -102,5 +102,27 @@ Route::get('/auth/callback', function () {
 
     Auth::login($user);
 
-    return redirect('/');
+    return redirect('/')->with('message', 'Accesso effettuato');
+});
+
+
+// Auth GitHub
+Route::get('/auth/github/redirect', function () {
+    return Socialite::driver('github')->redirect();
+})->name('github-redirect');
+
+Route::get('/auth/github/callback', function () {
+    $githubUser = Socialite::driver('github')->stateless()->user();
+
+    $user = App\Models\User::firstOrCreate(
+        ['email' => $githubUser->getEmail()],
+        [
+            'name' => $githubUser->getName(),
+            'password'=> bcrypt(Str::random(8))
+        ]
+    );
+
+    Auth::login($user);
+
+    return redirect('/')->with('message', 'Accesso effettuato');
 });

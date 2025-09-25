@@ -65,8 +65,10 @@
                                                     <a class="border border-black p-2 rounded google-auth hover:border-none"
                                                         href="{{ route('google-redirect') }}">
                                                         <i class="fa-brands fa-google"></i> Accedi con Google
-
                                                     </a>
+                                                </div>
+                                                <div class="text-center mb-4">
+                                                    <a href="{{ route('github-redirect') }}">Accedi con GitHub</a>
                                                 </div>
                                                 <div class="flex items-center gap-2 mb-5 mt-7">
                                                     <hr class="flex-grow">
