@@ -1,6 +1,11 @@
 <?php
 
+use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\WriterController;
@@ -58,4 +63,44 @@ Route::middleware('writer')->group(function () {
     Route::controller(WriterController::class)->group(function () {
         Route::get('/writer/dashboard', 'dashboard')->name('writer-dashboard');
     });
+});
+
+// Auth Google
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')
+        ->scopes(['https://www.googleapis.com/auth/calendar'])
+        ->stateless()
+        ->redirect();
+})->name('google-redirect');
+
+Route::get('/auth/refresh', function () {
+    $refreshToken = Storage::disk('local')->get('google/oauth-refresh-token.json');
+
+    $newTokens = Socialite::driver('google')->refreshToken($refreshToken);
+
+    if ($newTokens->token) {
+        Storage::disk('local')->put('google/oauth-token.json', $newTokens->token);
+    }
+
+    if ($newTokens->refreshToken) {
+        Storage::disk('local')->put('google/oauth-refresh-token.json', $newTokens->refreshToken);
+    }
+
+    return redirect('/gmail');
+});
+
+Route::get('/auth/callback', function () {
+    $googleUser = Socialite::driver('google')->stateless()->user();
+
+    $user = App\Models\User::firstOrCreate(
+        ['email' => $googleUser->getEmail()],
+        [
+            'name' => $googleUser->getName(),
+            'password'=> bcrypt(Str::random(8))
+        ]
+    );
+
+    Auth::login($user);
+
+    return redirect('/');
 });
