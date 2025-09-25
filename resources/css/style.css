@@ -1,64 +1,81 @@
-.logout{
+.google-auth{
+    transition: 0.5s;
+}
+
+.google-auth:hover{
+   background-color: #DB4437;
+   color: white;
+}
+
+.line-nav{
+    transform: rotate(90deg);
+}
+
+.logout {
     transition: 0.3s;
 }
 
-.logout:hover{
+.logout:hover {
     color: #ce0303;
 }
 
-.effect-img-home-writer{
+.effect-img-home-writer {
     animation: img-writer 0.8s linear;
 }
 
-@keyframes img-writer{
-    from{
+@keyframes img-writer {
+    from {
         transform: translateX(200px);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-.scroll{
+.scroll {
     overflow: hidden;
 }
 
-.container-scroll{
+.container-scroll {
     display: inline-flex;
     animation: scrollImage 10s;
     width: fit-content;
 }
 
-.container-scroll img{
+.container-scroll img {
     width: 300px;
     margin-left: 30px;
     border-radius: 20px;
     object-fit: cover;
 }
 
-@keyframes scrollImage{
-    from{transform: translateX(0%);}
-    to{transform: translateX(-100%);}
+@keyframes scrollImage {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
-.effect-careers-img{
+.effect-careers-img {
     animation: effect-img-right 1s linear;
 }
 
-@keyframes effect-img-right{
-    from{
+@keyframes effect-img-right {
+    from {
         transform: translateY(200px);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-.link-form-careers{
+.link-form-careers {
     display: flex;
     justify-content: center;
     box-shadow: 1px 1px 2px;
@@ -68,6 +85,6 @@
     /* z */
 }
 
-footer{
+footer {
     margin-top: 400px;
 }

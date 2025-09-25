@@ -62,9 +62,18 @@
                                                 <h3 id="dialog-title" class="text-4xl text-center mb-10 mt-4">
                                                     Iscriviti ed inizia a pubblicare i tuoi post!</h3>
                                                 <div class="text-center mb-4">
-                                                    <a class="border border-black p-2 rounded" href="{{ route('google-redirect') }}"><span></span> Accedi con Google</a>
+                                                    <a class="border border-black p-2 rounded google-auth hover:border-none"
+                                                        href="{{ route('google-redirect') }}">
+                                                        <i class="fa-brands fa-google"></i> Accedi con Google
+
+                                                    </a>
                                                 </div>
-                                                <div class="mt-2 text-xl text-center">
+                                                <div class="flex items-center gap-2 mb-5 mt-7">
+                                                    <hr class="flex-grow">
+                                                    <span class="text-sm">Oppure</span>
+                                                    <hr class="flex-grow">
+                                                </div>
+                                                <div class="text-xl text-center">
                                                     <p>Iscriviti tramite <a class=" hover:underline text-sky-500"
                                                             href="{{ route('register') }}">email</a></p>
                                                     <p>Hai già un account? <a class=" hover:underline text-sky-500"
