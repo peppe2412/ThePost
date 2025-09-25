@@ -7,10 +7,6 @@
    color: white;
 }
 
-.line-nav{
-    transform: rotate(90deg);
-}
-
 .logout {
     transition: 0.3s;
 }
