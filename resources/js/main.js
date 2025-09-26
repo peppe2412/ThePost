@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Effetto immagine writer home
     let img_writer_effect = document.querySelector("#imgWriterHome");
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 0) {
-            img_writer_effect.classList.add("effect-img-home-writer");
-        }
-    });
+    if (img_writer_effect) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 0) {
+                img_writer_effect.classList.add("effect-img-home-writer");
+            }
+        });
+    }
 
     // Effetto scroll home
     let imgScroll = [
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function ImagesScroll(repeat = 0) {
         let container = document.querySelector("#containerScroll");
+        if (!container) return;
         container.innerHTML = "";
 
         let imagesUse = [];
@@ -83,13 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let formCareersLink = document.querySelector("#link-form-careers");
     let formCareers = document.querySelector("#careers-form");
 
-    window.addEventListener("scroll", () => {
-        let getBound = formCareers.getBoundingClientRect();
+    if (formCareersLink && formCareers) {
+        window.addEventListener("scroll", () => {
+            let getBound = formCareers.getBoundingClientRect();
 
-        if (getBound.top < window.innerHeight) {
-            formCareersLink.classList.add("opacity-0");
-        } else {
-            formCareersLink.classList.remove("opacity-0");
-        }
-    });
+            if (getBound.top < window.innerHeight) {
+                formCareersLink.classList.add("opacity-0");
+            } else {
+                formCareersLink.classList.remove("opacity-0");
+            }
+        });
+    }
 });
