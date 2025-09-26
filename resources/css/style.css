@@ -91,7 +91,20 @@
     width: 200px;
     padding: 7px;
     position: fixed;
-    /* z */
+}
+
+.title-article-index{
+    animation: typing 2s steps(30);
+    overflow: hidden;
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 6ch;
+    }
 }
 
 footer {

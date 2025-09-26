@@ -96,7 +96,7 @@ Route::get('/auth/callback', function () {
         ['email' => $googleUser->getEmail()],
         [
             'name' => $googleUser->getName(),
-            'password'=> bcrypt(Str::random(8))
+            'password' => bcrypt(Str::random(8))
         ]
     );
 
@@ -118,7 +118,7 @@ Route::get('/auth/github/callback', function () {
         ['email' => $githubUser->getEmail()],
         [
             'name' => $githubUser->getName(),
-            'password'=> bcrypt(Str::random(8))
+            'password' => bcrypt(Str::random(8))
         ]
     );
 
@@ -126,3 +126,4 @@ Route::get('/auth/github/callback', function () {
 
     return redirect('/')->with('message', 'Accesso effettuato');
 });
+
