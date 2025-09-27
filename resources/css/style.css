@@ -43,6 +43,12 @@
     }
 }
 
+@media (max-width: 900px) {
+    .effect-img-home-writer {
+        animation: none;
+    }
+}
+
 .scroll {
     overflow: hidden;
 }
@@ -93,16 +99,16 @@
     position: fixed;
 }
 
-.title-article-index{
+.title-article-index {
     animation: typing 2s steps(30);
     overflow: hidden;
 }
 
-@keyframes typing{
-    from{
+@keyframes typing {
+    from {
         width: 0;
     }
-    to{
+    to {
         width: 6ch;
     }
 }
