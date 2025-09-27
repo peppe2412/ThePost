@@ -29,7 +29,8 @@
             <div class="lg:w-full">
                 <div class="lg:flex lg:justify-evenly">
                     <div class="lg:w-[500px] ml-5">
-                        <p class="lg:text-3xl text-xl md:text-4xl md:ml-4">Benvenuto su <strong class="fs-main">THE POST</strong>, la piattaforma pensata per chi
+                        <p class="lg:text-3xl text-xl md:text-4xl md:ml-4">Benvenuto su <strong class="fs-main">THE
+                                POST</strong>, la piattaforma pensata per chi
                             scrive.
                             Qui
                             trovi
@@ -56,7 +57,8 @@
 
     <div class="lg:flex lg:justify-center">
         <div class="lg:w-[50%] ml-5">
-            <p class="lg:text-2xl text-lg md:text-4xl">Su <strong class="fs-main">THE POST</strong> diamo spazio a ogni voce. Politica,
+            <p class="lg:text-2xl text-lg md:text-4xl">Su <strong class="fs-main">THE POST</strong> diamo spazio a ogni
+                voce. Politica,
                 economia, sport, musica,
                 tecnologia, motori e molto altro: tanti mondi diversi uniti dalla stessa passione per la scrittura. Qui
                 ogni
@@ -75,6 +77,8 @@
             </div>
         </div>
     </div>
+
+
 
 
 
