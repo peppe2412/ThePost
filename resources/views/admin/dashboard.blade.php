@@ -80,7 +80,7 @@
                     @csrf
                     <div class="mb-5">
                         <input name="name" type="text" placeholder="Inserisci nuova categoria">
-                        <button class="submit">Inserisci</button>
+                        <button type="submit" class="btn btn-primary p-1">Inserisci</button>
                         @error('name')
                             <span class="tw-form-span-message">{{ $message }}</span>
                         @enderror

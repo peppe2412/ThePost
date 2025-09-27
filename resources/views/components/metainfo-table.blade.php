@@ -43,7 +43,7 @@
                             @csrf
                             @method('PUT')
                             <input type="text" name="name" placeholder="Nuovo nome">
-                            <button type="submit" class="text-success text-decoration-underline">Aggiorna</button>
+                            <button type="submit" class="btn btn-outline-success p-1 mx-2">Aggiorna</button>
                         </form>
                     </td>
                     <td>
