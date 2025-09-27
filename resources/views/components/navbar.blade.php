@@ -19,19 +19,21 @@
         </div>
         <div class="text-sm w-full md:text-lg md:block md:w-auto mt-7" id="navbar-default">
             <ul
-                class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+                class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
                 <li>
-                    <a href="{{ route('home') }}" class="text-lg h-14 flex items-center tw-hover-underline-nav"
+                    <a href="{{ route('home') }}" class="lg:text-lg text-xl h-14 flex items-center tw-hover-underline-nav"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="{{ route('article-index') }}"
-                        class="h-14 flex items-center text-lg tw-hover-underline-nav">Articoli</a>
+                        class="h-14 flex items-center lg:text-lg text-xl tw-hover-underline-nav">Articoli</a>
                 </li>
                 @guest
+                <li>
                     <button command="show-modal" commandfor="dialog"
-                        class="cursor-pointer rounded-2xl p-2 hover:bg-gray-200 text-lg">Accedi
+                        class="cursor-pointer h-14 flex items-center rounded-2xl lg:p-2 hover:bg-gray-200 lg:text-lg text-xl">Accedi
                         | Registrati</button>
+                </li>
                     <el-dialog>
                         <dialog id="dialog" aria-labelledby="dialog-title"
                             class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
