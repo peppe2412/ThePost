@@ -61,7 +61,7 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
+            <div class="col-12 col-md-12 col-lg-12">
                 <h2 class="text-center mb-5">
                     Tag
                 </h2>
@@ -72,8 +72,8 @@
 
     <div class="container py-5 mb-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-                <h2 class="text-center mb-6">
+            <div class="col-12 col-md-12 col-lg-12">
+                <h2 class="text-center mb-5">
                     Categorie
                 </h2>
                 <form action="{{ route('create-category') }}" method="POST">

@@ -34,7 +34,7 @@
                      <form action="{{ route('article-delete', $article) }}" method="POST">
                          @csrf
                          @method('DELETE')
-                         <button type="submit" class="btn btn-outline-danger">Elimina</button>
+                         <button type="submit" class="btn btn-outline-danger p-md-1">Elimina</button>
                      </form>
                  </td>
              </tr>

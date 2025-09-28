@@ -22,7 +22,7 @@
                     @else
                         <form action="{{ route('revisor-article-undo', $article) }}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-outline-primary">Riporta
+                            <button type="submit" class="btn btn-outline-primary p-1">Riporta
                                 in revisione</button>
                         </form>
                     @endif

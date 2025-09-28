@@ -18,7 +18,7 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-12">
+            <div class="col-12 col-md-12 col-lg-12">
                 <h2 class="text-center mb-5">
                     Articoli da revisionare
                 </h2>
@@ -33,7 +33,7 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-12">
+            <div class="col-12 col-md-12 col-lg-12">
                 <h2 class="text-center mb-5">
                     Articoli pubblicati
                 </h2>
@@ -48,7 +48,7 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-12">
+            <div class="col-11 col-md-12 col-lg-12">
                 <h2 class="text-center mb-5">
                     Articoli respinti
                 </h2>
