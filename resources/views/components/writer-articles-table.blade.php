@@ -1,45 +1,44 @@
- <div>
-     <table class="w-full border border-gray-800 table-fixed">
-         <thead class="border border-gray-400">
-             <tr class="uppercase">
-                 <th>#</th>
-                 <th>Titolo</th>
-                 <th>Sottotitolo</th>
-                 <th>Categoria</th>
-                 <th>Tags</th>
-                 <th>Inserito il</th>
-                 <th>Azioni</th>
+ <table class="table">
+     <thead>
+         <tr>
+             <th>#</th>
+             <th>Titolo</th>
+             <th>Sottotitolo</th>
+             <th>Categoria</th>
+             <th>Tags</th>
+             <th>Inserito il</th>
+             <th>Azioni</th>
+         </tr>
+     </thead>
+     <tbody>
+         @foreach (Auth::user()->articles as $article)
+             <tr>
+                 <td>{{ $article->id }}</td>
+                 <td>{{ $article->title }}</td>
+                 <td>{{ $article->subtitle }}</td>
+                 <td>{{ $article->category->name ?? 'Nessuna categoria' }}</td>
+                 <td>
+                     @foreach ($article->tags as $tag)
+                         #{{ $tag->name }}
+                     @endforeach
+                 </td>
+                 <td>{{ $article->created_at->format('d/m/Y') }}</td>
+                 <td><a class="hover:underline cursor-pointer text-sm font-bold"
+                         href="{{ route('article-show', $article) }}">Leggi
+                     </a>
+                 </td>
+                 <td>
+                     <a class="icon-link" href="{{ route('article-edit', $article) }}">Modifica</a>
+                 </td>
+                 <td>
+                     <form action="{{ route('article-delete', $article) }}" method="POST">
+                         @csrf
+                         @method('DELETE')
+                         <button type="submit" class="btn btn-outline-danger">Elimina</button>
+                     </form>
+                 </td>
              </tr>
-         </thead>
-         <tbody>
-             @foreach (Auth::user()->articles as $article)
-                 <tr class="border-b">
-                     <td class="px-24">{{ $article->id }}</td>
-                     <td class="px-2 py-4">{{ $article->title }}</td>
-                     <td class="px-2 py-4">{{ $article->subtitle }}</td>
-                     <td class="px-2 py-4">{{ $article->category->name ?? 'Nessuna categoria' }}</td>
-                     <td class="px-2 py-4">
-                         @foreach ($article->tags as $tag)
-                             #{{ $tag->name }}
-                         @endforeach
-                     </td>
-                     <td class="px-2 py-4">{{ $article->created_at->format('d/m/Y') }}</td>
-                     <td class="px-9 py-4"><a class="hover:underline cursor-pointer text-sm font-bold"
-                             href="{{ route('article-show', $article) }}">Leggi
-                         </a>
-                     </td>
-                     <td>
-                         <a class="hover:underline" href="{{ route('article-edit', $article) }}">Modifica</a>
-                     </td>
-                     <td>
-                         <form action="{{ route('article-delete', $article) }}" method="POST">
-                             @csrf
-                             @method('DELETE')
-                             <button type="submit" class="text-red-400 hover:underline cursor-pointer">Elimina</button>
-                         </form>
-                     </td>
-                 </tr>
-             @endforeach
-         </tbody>
-     </table>
- </div>
+         @endforeach
+     </tbody>
+ </table>
+
