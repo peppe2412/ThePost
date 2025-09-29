@@ -1,2 +1,5 @@
 @import 'bootstrap';
 @import "bootstrap-icons/font/bootstrap-icons";
+@import './dasboards.css';
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');

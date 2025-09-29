@@ -1,6 +1,6 @@
 <x-dashboards-layout>
 
-    <header class="container py-5">
+    <header class="container py-5 fs-main">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
                 <h1 class="display-3 text-center"><x-greeting-by-time /> {{ Auth::user()->name }}</h1>
@@ -16,49 +16,51 @@
         </div>
     @endif
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-12 col-lg-12">
-                <h2 class="text-center mb-5">
-                    Articoli da revisionare
-                </h2>
-                @if ($unrevisorArticles->isNotEmpty())
-                    <x-articles-table :articles="$unrevisorArticles" />
-                @else
-                    <p class="text-center">Non sono presenti articoli da revisionare</p>
-                @endif
+    <main class="fs-tables">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <h2 class="text-center mb-5">
+                        Articoli da revisionare
+                    </h2>
+                    @if ($unrevisorArticles->isNotEmpty())
+                        <x-articles-table :articles="$unrevisorArticles" />
+                    @else
+                        <p class="text-center">Non sono presenti articoli da revisionare</p>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-12 col-lg-12">
-                <h2 class="text-center mb-5">
-                    Articoli pubblicati
-                </h2>
-                @if ($acceptArticles->isNotEmpty())
-                    <x-articles-table :articles="$acceptArticles" />
-                @else
-                    <p class="text-center">Non sono presenti articoli</p>
-                @endif
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <h2 class="text-center mb-5">
+                        Articoli pubblicati
+                    </h2>
+                    @if ($acceptArticles->isNotEmpty())
+                        <x-articles-table :articles="$acceptArticles" />
+                    @else
+                        <p class="text-center">Non sono presenti articoli</p>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-11 col-md-12 col-lg-12">
-                <h2 class="text-center mb-5">
-                    Articoli respinti
-                </h2>
-                @if ($rejectArticles->isNotEmpty())
-                    <x-articles-table :articles="$rejectArticles" />
-                @else
-                    <p class="text-center">Non sono presenti articoli</p>
-                @endif
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-12 col-lg-12">
+                    <h2 class="text-center mb-5">
+                        Articoli respinti
+                    </h2>
+                    @if ($rejectArticles->isNotEmpty())
+                        <x-articles-table :articles="$rejectArticles" />
+                    @else
+                        <p class="text-center">Non sono presenti articoli</p>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
 </x-dashboards-layout>
