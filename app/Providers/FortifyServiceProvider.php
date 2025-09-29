@@ -47,19 +47,23 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::loginView(function () {
-            return view('auth.login');
+            $title = 'Login';
+            return view('auth.login', compact('title'));
         });
 
         Fortify::registerView(function () {
-            return view('auth.register');
+            $title = 'Registrazione';
+            return view('auth.register', compact('title'));
         });
 
         Fortify::requestPasswordResetLinkView(function () {
-            return view('auth.forgot-password');
+            $title = 'Richiesta reset password';
+            return view('auth.forgot-password', compact('title'));
         });
 
         Fortify::resetPasswordView(function (Request $request) {
-            return view('auth.reset-password', ['request' => $request]);
+            $title = 'Nuova password';
+            return view('auth.reset-password', ['request' => $request], ['title' => $title]);
         });
     }
 }

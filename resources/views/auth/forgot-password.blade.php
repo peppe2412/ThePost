@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$title">
 
     <div class="container mt-24 flex justify-center">
         <div class="w-[50%] shadow-lg rounded-b-lg">

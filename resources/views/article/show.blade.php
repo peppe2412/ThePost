@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$title">
 
     <header class="flex flex-col py-16 ml-4">
         <h1 class="text-6xl mb-7">{{ $article->title }}</h1>

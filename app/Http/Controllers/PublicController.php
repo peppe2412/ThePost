@@ -22,13 +22,15 @@ class PublicController extends Controller implements HasMiddleware
 
     public function home()
     {
+        $title = 'Home';
         $articles = Article::where('is_accepted', true)->orderBy('created_at','desc')->take(4)->get();
-        return view('welcome', compact('articles'));
+        return view('welcome', compact('articles', 'title'));
     }
 
     public function careers()
     {
-        return view('careers');
+        $title = 'Lavora con noi';
+        return view('careers', compact('title'));
     }
 
     public function careersSubmit(Request $request)

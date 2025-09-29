@@ -28,8 +28,9 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function index()
     {
+        $title = 'Articoli';
         $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->get();
-        return view('article.index', compact('articles'));
+        return view('article.index', compact('articles', 'title'));
     }
 
     /**
@@ -37,7 +38,8 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function create()
     {
-        return view('article.create');
+        $title = 'Crea articolo';
+        return view('article.create', compact('title'));
     }
 
     /**
@@ -95,7 +97,8 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function show(Article $article)
     {
-        return view('article.show', compact('article'));
+        $title = $article->title;
+        return view('article.show', compact('article', 'title'));
     }
 
     /**
@@ -103,8 +106,9 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function edit(Article $article)
     {
+        $title = 'Modifica articolo';
         if (Auth::user()->id == $article->user_id) {
-            return view('article.edit', compact('article'));
+            return view('article.edit', compact('article', 'title'));
         } else {
             return redirect(route('home'))->with('alert', 'Accesso non consentito');
         }
@@ -183,18 +187,21 @@ class ArticleController extends Controller implements HasMiddleware
     {
         $query = $request->input('query');
         $articles = Article::search($query)->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
-        return view('article.search', compact('articles', 'query'));
+        $title = $query;
+        return view('article.search', compact('articles', 'query', 'title'));
     }
 
     public function byCategory(Category $category)
     {
+        $title = $category->name;
         $articles = $category->articles()->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
-        return view('article.by-category', compact('articles', 'category'));
+        return view('article.by-category', compact('articles', 'category', 'title'));
     }
 
     public function byUser(User $user)
     {
+        $title = "Articoli di: $user->name";
         $articles = $user->articles()->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
-        return view('article.by-redactor', compact('articles', 'user'));
+        return view('article.by-redactor', compact('articles', 'user', 'title'));
     }
 }

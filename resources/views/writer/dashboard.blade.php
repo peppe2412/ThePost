@@ -1,4 +1,4 @@
-<x-dashboards-layout>
+<x-dashboards-layout :title="$title">
 
 
     <header class="container py-5 fs-main">

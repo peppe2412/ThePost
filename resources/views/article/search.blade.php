@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$title">
 
 
     <header class="flex justify-center py-16">

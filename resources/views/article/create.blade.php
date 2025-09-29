@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="$title">
 
     <header class="flex justify-center py-16">
         <h1 class="text-6xl">Inserisci Articolo</h1>

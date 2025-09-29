@@ -11,10 +11,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
+        $title = 'Admin';
         $adminRequests = User::where('is_admin', NULL)->get();
         $revisorRequests = User::where('is_revisor', NULL)->get();
         $writerRequests = User::where('is_writer', NULL)->get();
-        return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests'));
+        return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests', 'title'));
     }
 
     public function setAdmin(User $user)
