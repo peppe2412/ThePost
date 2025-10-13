@@ -88,3 +88,7 @@
 .tw-alert-span {
     @apply bg-red-300 w-[400px] text-center p-[20px] border border-red-500 text-xl text-white;
 }
+
+.tw-button-send-verify{
+    @apply text-lg cursor-pointer underline text-sky-500
+}

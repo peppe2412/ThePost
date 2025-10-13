@@ -21,6 +21,6 @@ class RegisteredListener
      */
     public function handle(Registered $event): void
     {
-        session()->flash('message', 'Registrazione avvenuta con successo');
+        session()->flash('status', 'Registrazione avvenuta con successo');
     }
 }

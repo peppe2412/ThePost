@@ -10,6 +10,14 @@
         </div>
     @endif
 
+    @if (session('status'))
+        <div class="flex justify-center py-8">
+            <div class="tw-message-span">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
     @if (session('alert'))
         <div class="flex justify-center py-8">
             <div class="tw-alert-span">

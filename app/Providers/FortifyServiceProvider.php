@@ -14,6 +14,7 @@ use App\Actions\Fortify\UpdateUserPassword;
 use Illuminate\Support\Facades\RateLimiter;
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+use Laravel\Fortify\Contracts\RegisterResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -22,7 +23,18 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(RegisterResponse::class, function(){
+            return new class implements RegisterResponse{
+                public function toResponse($request)
+                {
+                    if($request->user()->hasVerifiedEmail()){
+                        return redirect()->intended('/')->with('status', 'Registrazione avvenuta con successo');
+                    }else{
+                        return redirect(route('verification.notice'));
+                    }
+                }
+            };
+        });
     }
 
     /**
@@ -54,6 +66,11 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::registerView(function () {
             $title = 'Registrazione';
             return view('auth.register', compact('title'));
+        });
+
+        Fortify::verifyEmailView(function () {
+            $title = 'Verifica email';
+            return view('auth.verify-email', compact('title'));
         });
 
         Fortify::requestPasswordResetLinkView(function () {
