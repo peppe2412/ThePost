@@ -15,12 +15,19 @@ The Post è un’applicazione web sviluppata con Laravel che permette agli utent
 - Frontend: Blade + Tailwind/Bootstrap
 - Database: MySQL
 ### 🚀Per l'installazione del progetto
-```bash
+#### 1°
+```
 git clone https://github.com/tuo-username/the-post.git
 cd the-post
 composer install
+```
+#### 2°
+```
 npm install
 npm run dev
+```
+#### 3°
+```
 cp .env.example .env
 php artisan key:generate
 php artisan migrate 
