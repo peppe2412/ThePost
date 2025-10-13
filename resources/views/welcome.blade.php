@@ -10,10 +10,18 @@
         </div>
     @endif
 
-    @if (session('status'))
+    @if (request()->has('verified'))
         <div class="flex justify-center py-8">
             <div class="tw-message-span">
-                {{ session('status') }}
+                Verifica eseguita!
+            </div>
+        </div>
+    @endif
+
+    @if (request()->has('logout'))
+        <div class="flex justify-center py-8">
+            <div class="tw-message-span">
+                Disconnessione riuscita! Ci vediamo alla prossima!
             </div>
         </div>
     @endif

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Http\Responses\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -28,10 +29,18 @@ class FortifyServiceProvider extends ServiceProvider
                 public function toResponse($request)
                 {
                     if($request->user()->hasVerifiedEmail()){
-                        return redirect()->intended('/')->with('status', 'Registrazione avvenuta con successo');
+                        return redirect()->intended('/');
                     }else{
                         return redirect(route('verification.notice'));
                     }
+                }
+            };
+        });
+
+        $this->app->singleton(LogoutResponse::class, function(){
+            return new class extends LogoutResponse{
+                public function toResponse($request){
+                    return redirect('/?logout=1');
                 }
             };
         });
@@ -69,6 +78,9 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::verifyEmailView(function () {
+            if(auth()->check() && auth()->user()->hasVerifiedEmail()){
+                return redirect('/?verified=1');
+            }
             $title = 'Verifica email';
             return view('auth.verify-email', compact('title'));
         });

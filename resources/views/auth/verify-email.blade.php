@@ -2,7 +2,7 @@
 
     <header class="py-8">
         <div class="flex justify-center">
-            <p class="text-4xl">Registrazione effettuata, è stata mandato un link di verifica alla tua email</p>
+            <p class="text-4xl">Registrazione effettuata, è stato mandato un link di verifica alla tua email</p>
         </div>
     </header>
 

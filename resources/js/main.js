@@ -8,11 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("click", (event) => {
         let dropdown = document.querySelector("#dropdown");
         let button = document.querySelector("#dropdown-btn");
-        if (
-            !button.contains(event.target) &&
-            !dropdown.contains(event.target)
-        ) {
-            dropdown.classList.add("hidden");
+        if (dropdown && button) {
+            if (
+                !button.contains(event.target) &&
+                !dropdown.contains(event.target)
+            ) {
+                dropdown.classList.add("hidden");
+            }
         }
     });
 

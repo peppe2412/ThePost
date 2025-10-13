@@ -18,8 +18,15 @@ Route::controller(PublicController::class)->group(function () {
     Route::post('/careers/submit', 'careersSubmit')->name('careers-submit');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::controller(ArticleController::class)->group(function () {
+    Route::get('/article/index', 'index')->name('article-index');
+    Route::get('article/search', 'articleSearch')->name('article-search');
+    Route::get('article/show/{article}', 'show')->name('article-show');
+    Route::get('/article/category/{category}', 'byCategory')->name('article-category');
+    Route::get('article/redactor/{user}', 'byUser')->name('article-redactor');
+});
 
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware('admin')->group(function () {
         Route::controller(AdminController::class)->group(function () {
             Route::get('/admin/dashboard', 'dashboard')->name('admin-dashboard');
@@ -43,13 +50,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         });
     });
     
-    Route::controller(ArticleController::class)->group(function () {
-        Route::get('/article/index', 'index')->name('article-index');
-        Route::get('article/search', 'articleSearch')->name('article-search');
-        Route::get('article/show/{article}', 'show')->name('article-show');
-        Route::get('/article/category/{category}', 'byCategory')->name('article-category');
-        Route::get('article/redactor/{user}', 'byUser')->name('article-redactor');
-    });
     
     Route::middleware('writer')->group(function () {
         Route::controller(ArticleController::class)->group(function () {
@@ -65,8 +65,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::controller(WriterController::class)->group(function () {
             Route::get('/writer/dashboard', 'dashboard')->name('writer-dashboard');
         });
-    });
-    
+    });    
 });
 
 
