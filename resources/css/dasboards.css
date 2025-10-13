@@ -5,3 +5,19 @@
 .fs-tables {
     font-family: "Inconsolata", monospace;
 }
+
+.alert-dasboards-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(5, 204, 5);
+    border: 1px solid rgb(3, 121, 3);
+    padding: 15px;
+}
+
+.alert-dashboards {
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: xx-large;
+}

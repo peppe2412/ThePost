@@ -15,8 +15,8 @@
 
 
     @if (session('message'))
-        <div class="d-flex justify-content-center">
-            <div class="alert alert-success w-25 text-center fs-5">
+        <div class="alert-dasboards-box">
+            <div class="alert-dashboards">
                 {{ session('message') }}
             </div>
         </div>

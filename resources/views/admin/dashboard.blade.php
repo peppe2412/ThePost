@@ -9,8 +9,10 @@
     </header>
 
     @if (session('message'))
-        <div class="alert alert-success w-50">
-            {{ session('message') }}
+        <div class="alert-dasboards-box">
+            <div class="alert-dashboards">
+                {{ session('message') }}
+            </div>
         </div>
     @endif
 
