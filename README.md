@@ -1,4 +1,5 @@
 # 📝 The Post
+![Dashboard](screenshots/the-post.png)
 The Post è un’applicazione web sviluppata con Laravel che permette agli utenti di scrivere e leggere articoli con un sistema di ruoli avanzato.
 ### 🎯 Funzionalità principali
 #### 🖊️ Scrivere, modificare e pubblicare articoli.
