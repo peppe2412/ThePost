@@ -33,7 +33,7 @@ php artisan key:generate
 php artisan migrate 
 php artisan serve
 ```
-### Comandi per pulire cache e configurazioni:
+#### Comandi per pulire cache e configurazioni (utili se sono state fatte modifiche al .env o per sviluppo e debudding):
 ```bash
 php artisan config:clear
 php artisan cache:clear
