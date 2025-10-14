@@ -17,7 +17,7 @@ The Post è un’applicazione web sviluppata con Laravel che permette agli utent
 ### 🚀Per l'installazione del progetto
 #### 1°
 ```
-git clone https://github.com/tuo-username/the-post.git
+git clone git@github.com:peppe2412/ThePost.git
 cd the-post
 composer install
 ```
