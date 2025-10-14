@@ -100,7 +100,7 @@
 }
 
 .title-article-index {
-    animation: typing 2s steps(30);
+    animation: typing 2s steps(100);
     overflow: hidden;
 }
 
