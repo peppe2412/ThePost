@@ -1,4 +1,4 @@
-<x-layout.layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <div class="container mt-16">
         <h1 class="text-center text-6xl uppercase font-bold">Inserisci la tua nuova password</h1>
@@ -47,4 +47,4 @@
         </div>
     </div>
 
-</x-layout.layout>
+</x-layouts.layout>
