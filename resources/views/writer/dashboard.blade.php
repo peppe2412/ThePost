@@ -1,4 +1,4 @@
-<x-dashboards-layout :title="$title">
+<x-layouts.dashboards-layout :title="$title">
 
 
     <header class="container py-5 fs-main">
@@ -31,7 +31,7 @@
                         Articoli in attesa di revisione
                     </h2>
                     @if ($unrevisorArticles->isNotEmpty())
-                        <x-writer-articles-table :articles="$unrevisorArticles" />
+                        <x-tables.writer-articles-table :articles="$unrevisorArticles" />
                     @else
                         <p class="text-center">Non ci sono articoli in revisione</p>
                     @endif
@@ -46,7 +46,7 @@
                         Articoli pubblicati
                     </h2>
                     @if ($acceptArticles->isNotEmpty())
-                        <x-writer-articles-table :articles="$acceptArticles" />
+                        <x-tables.writer-articles-table :articles="$acceptArticles" />
                     @else
                         <p class="text-center">Non ci sono ancora articoli pubblicati da te</p>
                     @endif
@@ -61,7 +61,7 @@
                         Articoli respinti
                     </h2>
                     @if ($rejectArticles->isNotEmpty())
-                        <x-writer-articles-table :articles="$rejectArticles" />
+                        <x-tables.writer-articles-table :articles="$rejectArticles" />
                     @else
                         <p class="text-center">Non sono presenti articoli respinti</p>
                     @endif
@@ -70,4 +70,4 @@
         </div>
     </main>
 
-</x-dashboards-layout>
+</x-layouts.dashboards-layout>

@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
 
 
@@ -98,4 +98,4 @@
 
 
 
-</x-layout>
+</x-layouts.layout>

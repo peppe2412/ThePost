@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <div class="ml-5" id="link-form-careers">
         <a class="link-form-careers text-lg bg-sky-300 rounded" href="#careers-form">Compila il form <span class="mx-2"><svg
@@ -119,4 +119,4 @@
     </div>
 
 
-</x-layout>
+</x-layouts.layout>

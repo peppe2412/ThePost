@@ -1,4 +1,4 @@
-<x-errors-layout>
+<x-layouts.errors-layout>
 
     <main class="container py-16">
         <div class="flex justify-center">
@@ -17,4 +17,4 @@
         </div>
     </main>
 
-</x-errors-layout>
+</x-layouts.errors-layout>

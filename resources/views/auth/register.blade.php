@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <div class="container py-24">
         <div class="text-center mb-5">
@@ -40,4 +40,4 @@
 
 
 
-</x-layout>
+</x-layouts.layout>

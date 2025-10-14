@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <header class="flex flex-col py-16">
         <h1 class="lg:text-6xl md:text-4xl text-3xl mb-7 text-center">{{ $article->title }}</h1>
@@ -57,4 +57,4 @@
 
 
 
-</x-layout>
+</x-layouts.layout>

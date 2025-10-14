@@ -1,4 +1,4 @@
-<x-dashboards-layout :title="$title">
+<x-layouts.dashboards-layout :title="$title">
 
     <header class="container py-5 fs-main">
         <div class="row justify-content-center">
@@ -24,7 +24,7 @@
                         Richieste Amministratore
                     </h2>
                     @if ($adminRequests->isNotEmpty())
-                        <x-request-table :roleRequests="$adminRequests" role="admin" />
+                        <x-tables.request-table :roleRequests="$adminRequests" role="admin" />
                     @else
                         <p class="text-center">Non ci sono candidature al momento</p>
                     @endif
@@ -39,7 +39,7 @@
                         Richieste Revisore
                     </h2>
                     @if ($revisorRequests->isNotEmpty())
-                        <x-request-table :roleRequests="$revisorRequests" role="revisor" />
+                        <x-tables.request-table :roleRequests="$revisorRequests" role="revisor" />
                     @else
                         <p class="text-center">Non ci sono candidature al momento</p>
                     @endif
@@ -54,7 +54,7 @@
                         Richieste Redattore
                     </h2>
                     @if ($writerRequests->isNotEmpty())
-                        <x-request-table :roleRequests="$writerRequests" role="writer" />
+                        <x-tables.request-table :roleRequests="$writerRequests" role="writer" />
                     @else
                         <p class="text-center">Non ci sono candidature al momento</p>
                     @endif
@@ -68,7 +68,7 @@
                     <h2 class="text-center mb-5">
                         Tag
                     </h2>
-                    <x-metainfo-table :metaInfos="$tags" role="tags" />
+                    <x-tables.metainfo-table :metaInfos="$tags" role="tags" />
                 </div>
             </div>
         </div>
@@ -89,10 +89,10 @@
                             @enderror
                         </div>
                     </form>
-                    <x-metainfo-table :metaInfos="$categories" role="category" />
+                    <x-tables.metainfo-table :metaInfos="$categories" role="category" />
                 </div>
             </div>
         </div>
     </main>
 
-</x-dashboards-layout>
+</x-layouts.dashboards-layout>

@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <header class="py-8">
         <div class="flex justify-center">
@@ -26,4 +26,4 @@
         </div>
     </div>
 
-</x-layout>
+</x-layouts.layout>

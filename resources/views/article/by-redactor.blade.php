@@ -1,4 +1,4 @@
-<x-layout :title="$title">
+<x-layouts.layout :title="$title">
 
     <header class="flex justify-center py-16">
         <h1 class="text-6xl">{{ $user->name }}</h1>
@@ -12,4 +12,4 @@
         </div>
     </div>
 
-</x-layout>
+</x-layouts.layout>
