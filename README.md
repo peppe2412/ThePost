@@ -11,9 +11,10 @@ The Post è un’applicazione web sviluppata con Laravel che permette agli utent
 
 - Admin: gestisce utenti, articoli, categorie, tag e ruoli.
 ### 🛠️ Tecnologie:
-- Backend: Laravel 12
-- Frontend: Blade + Tailwind/Bootstrap
-- Database: MySQL
+- Backend: [Laravel](https://laravel.com/) 12
+- Frontend: Blade + [Tailwind](https://tailwindcss.com/)/[Bootstrap](https://getbootstrap.com/)
+- Database: [MySQL](https://www.mysql.com/it/)
+- Mail: [Mailtrap](https://mailtrap.io/)
 ### 🚀Per l'installazione del progetto
 #### 1°
 ```
