@@ -99,4 +99,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Mostra password
+    let password_input = document.querySelector("#password");
+    let view_password = document.querySelector("#togglePassword");
+    let open_eye = document.querySelector('#eyeOpen')
+    let close_eye = document.querySelector('#eyeClose')
+
+    view_password.addEventListener("click", () => {
+        const type = password_input.getAttribute('type') == 'password' ? 'text' : 'password'
+        password_input.setAttribute('type', type)
+        if(type == 'text'){
+            open_eye.classList.add('hidden')
+            close_eye.classList.remove('hidden')
+        } else{
+            open_eye.classList.remove('hidden')
+            close_eye.classList.add('hidden')
+        }
+    });
 });
