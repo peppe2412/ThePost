@@ -8,6 +8,14 @@
         </div>
     @endif
 
+    @if ($errors->any())
+        <div class="auth-error">
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </div>
+    @endif
+
     <div class="container mt-24 md:mx-auto flex justify-center">
         <div class="lg:w-[50%] w-[400px] shadow-lg rounded-b-lg">
             <div class="bg-gray-100 rounded-t-lg p-2 mb-10">
