@@ -13,7 +13,7 @@
     @if (request()->has('verified'))
         <div class="flex justify-center py-8">
             <div class="tw-message-span">
-                Verifica eseguita!
+                Verifica eseguita! Registrazione completata!
             </div>
         </div>
     @endif
