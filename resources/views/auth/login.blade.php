@@ -1,5 +1,13 @@
 <x-layouts.layout :title="$title">
 
+    @if (session('status'))
+        <div class="flex justify-center py-8">
+            <div class="tw-message-span">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
     <div class="container py-24">
         <div class="text-center mb-5">
             <h1 class="text-6xl font-bold mb-4">Accedi</h1>
