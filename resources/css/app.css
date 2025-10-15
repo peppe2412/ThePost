@@ -21,7 +21,7 @@
 }
 
 .tw-form-input-auth-register {
-    @apply border-2 border-gray-950 rounded p-[4px] mt-2 w-[500px] text-lg;
+    @apply border-2 border-gray-950 rounded p-[4px] mt-2 lg:w-[500px] w-[200px] md:w-[400px] text-lg;
 }
 
 .tw-form-input-auth-login {
@@ -33,7 +33,7 @@
 }
 
 .tw-button-auth-register {
-    @apply bg-sky-500 hover:bg-sky-400 w-32 cursor-pointer p-2 rounded-xl text-lg text-white font-bold;
+    @apply bg-sky-500 hover:bg-sky-400 lg:w-32 md:w-32 w-full cursor-pointer p-2 rounded-xl text-lg text-white font-bold;
 }
 
 .tw-button-auth-login {
