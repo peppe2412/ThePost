@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -11,6 +12,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\WriterController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::controller(PublicController::class)->group(function () {
     Route::get('/', 'home')->name('home');
@@ -25,6 +27,21 @@ Route::controller(ArticleController::class)->group(function () {
     Route::get('/article/category/{category}', 'byCategory')->name('article-category');
     Route::get('article/redactor/{user}', 'byUser')->name('article-redactor');
 });
+
+Route::get('/email/verify', function () {
+    $title = 'Registrazione completata';
+    return view('auth.verify-email', compact('title'));
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/?verified=1');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware('admin')->group(function () {
