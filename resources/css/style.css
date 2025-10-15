@@ -113,6 +113,14 @@
     }
 }
 
+.auth-error{
+    color: #ce0303;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: xx-large;
+}
+
 footer {
     margin-top: 400px;
 }

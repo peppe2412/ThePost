@@ -8,6 +8,14 @@
         </div>
     @endif
 
+    @if ($errors->any())
+        <div class="auth-error">
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </div>
+    @endif
+
     <div class="container py-24 mx-auto">
         <div class="text-center mb-5">
             <h1 class="text-6xl font-bold mb-4">Accedi</h1>
@@ -18,24 +26,10 @@
                 <div class="mb-5">
                     <label for="email" class="tw-form-label-auth">Email</label>
                     <input name="email" type="email" id="email" class="tw-form-input-auth-login" />
-                    @if ($errors->any())
-                        <div class="tw-form-span-message mb-4">
-                            @foreach ($errors->all() as $error)
-                                {{ $error }}
-                            @endforeach
-                        </div>
-                    @endif
                 </div>
                 <div class="mb-5 relative">
                     <label for="password" class="tw-form-label-auth">Password</label>
                     <input name="password" type="password" id="password" class="tw-form-input-auth-login" />
-                    @if ($errors->any())
-                        <div class="tw-form-span-message mb-4">
-                            @foreach ($errors->all() as $error)
-                                {{ $error }}
-                            @endforeach
-                        </div>
-                    @endif
                     <span id="togglePassword" class="cursor-pointer absolute right-2 mt-3">
                         <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6">
