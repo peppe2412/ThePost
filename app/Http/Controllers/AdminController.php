@@ -12,35 +12,51 @@ class AdminController extends Controller
     public function dashboard()
     {
         $title = 'Admin';
-        $adminRequests = User::where('is_admin', NULL)->get();
-        $revisorRequests = User::where('is_revisor', NULL)->get();
-        $writerRequests = User::where('is_writer', NULL)->get();
+        $adminRequests = User::where(function ($query) {
+            $query->where('is_admin', false)->orWhereNull('is_admin');
+        })->whereNotNull('admin_request_at')->get();
+        $revisorRequests =  User::where(function ($query) {
+            $query->where('is_revisor', false)->orWhereNull('is_revisor');
+        })->whereNotNull('revisor_request_at')->get();
+        $writerRequests = User::where(function ($query) {
+            $query->where('is_writer', false)->orWhereNull('is_writer');
+        })->whereNotNull('writer_request_at')->get();
         return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests', 'title'));
     }
 
     public function setAdmin(User $user)
     {
-        $user->is_admin = true;
+        $user->update([
+            'is_admin' => true,
+            'admin_request_at' => null
+        ]);
         $user->save();
         return redirect(route('admin-dashboard'))->with('message', "Hai reso $user->name amministratore");
     }
 
     public function setRevisor(User $user)
     {
-        $user->is_revisor = true;
+        $user->update([
+            'is_revisor' => true,
+            'revisor_request_at' => null
+        ]);
         $user->save();
         return redirect(route('admin-dashboard'))->with('message', "Hai reso $user->name revisore");
     }
 
     public function setWriter(User $user)
     {
-        $user->is_writer = true;
+        $user->update([
+            'is_writer' => true,
+            'writer_request_at' => null
+        ]);
         $user->save();
         return redirect(route('admin-dashboard'))->with('message', "Hai reso $user->name redattore");
     }
 
-    public function storeCategory(Request $request){
-         $request->validate([
+    public function storeCategory(Request $request)
+    {
+        $request->validate([
             'name' => 'required|unique:categories'
         ], [
             'name.required' => 'Campo richiesto',

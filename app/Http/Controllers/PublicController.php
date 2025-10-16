@@ -23,7 +23,7 @@ class PublicController extends Controller implements HasMiddleware
     public function home()
     {
         $title = 'Home';
-        $articles = Article::where('is_accepted', true)->orderBy('created_at','desc')->take(4)->get();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
         return view('welcome', compact('articles', 'title'));
     }
 
@@ -35,6 +35,7 @@ class PublicController extends Controller implements HasMiddleware
 
     public function careersSubmit(Request $request)
     {
+
         $request->validate([
             'email' => 'required',
             'role' => 'required',
@@ -47,26 +48,36 @@ class PublicController extends Controller implements HasMiddleware
 
         $user = Auth::user();
         $role = $request->role;
-        $email = $request->email;
-        $message = $request->message;
-        $info = compact('role', 'email', 'message');
+        $info = [
+            'role' => $role,
+            'email' => $request->email,
+            'message' => $request->message,
+            'user_name' => $user->name
+        ];
 
         Mail::to('admin@mail.com')->send(new CareersRequestMail($info));
 
-        switch ($role){
+        switch ($role) {
             case 'admin':
-                $user->is_admin = NULL;
-            break;
+                $user->update([
+                    'is_admin' => false,
+                    'admin_request_at' => now()
+                ]);
+                break;
             case 'revisor':
-                $user->is_revisor = NULL;
-            break;
+                $user->update([
+                    'is_revisor' => false,
+                    'revisor_request_at' => now()
+                ]);
+                break;
             case 'writer':
-                $user->is_writer = NULL;
-            break;
-        } 
+                $user->update([
+                    'is_writer' => false,
+                    'writer_request_at' => now()
+                ]);
+                break;
+        }
 
-        $user->update();
         return redirect(route('home'))->with('message', 'Richiesta inviata');
-
     }
 }
