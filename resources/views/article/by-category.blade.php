@@ -4,10 +4,10 @@
         <h1 class="text-6xl">{{ $category->name }}</h1>
     </header>
 
-    <div class="container py-5">
-        <div class="flex justify-evenly mx-5">
+      <div class="lg:container py-5">
+        <div class="lg:grid lg:grid-cols-1 lg:gap-3 p-4">
             @foreach ($articles as $article)
-                <x-article-card :article="$article"/>
+                <x-article-card :article="$article" />
             @endforeach
         </div>
     </div>
