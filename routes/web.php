@@ -135,10 +135,14 @@ Route::get('/auth/github/redirect', function () {
 Route::get('/auth/github/callback', function () {
     $githubUser = Socialite::driver('github')->stateless()->user();
 
+    $name = $githubUser->getName() 
+        ?? $githubUser->getNickname() 
+        ?? 'Utente_' . Str::random(5);
+
     $user = App\Models\User::firstOrCreate(
         ['email' => $githubUser->getEmail()],
         [
-            'name' => $githubUser->getName(),
+            'name' => $name,
             'password' => bcrypt(Str::random(8))
         ]
     );
