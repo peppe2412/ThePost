@@ -4,9 +4,12 @@
         <div class="w-full py-8">
             <form action="{{ route('article-search') }}" method="GET">
                 @csrf
-                <div class="flex justify-center">
+                <div class="flex justify-center relative">
                     <input class="bg-white rounded-s-xl p-4 w-[700px] border border-gray-700" name="query" type="search"
                         placeholder="Cerca articolo">
+                    @error('query')
+                        <span class="text-red-500 text-2xl bottom-16 absolute">{{ $message }}</span>
+                    @enderror
                     <button class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700"
                         type="submit"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-7">

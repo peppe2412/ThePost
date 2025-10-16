@@ -185,6 +185,11 @@ class ArticleController extends Controller implements HasMiddleware
 
     public function articleSearch(Request $request)
     {
+        $request->validate([
+            'query' => 'required'
+        ], [
+            'query.required' => 'Campo richiesto'
+        ]);
         $query = $request->input('query');
         $articles = Article::search($query)->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
         $title = $query;
