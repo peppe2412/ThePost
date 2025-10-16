@@ -16,7 +16,7 @@ The Post è un’applicazione web sviluppata con Laravel che permette agli utent
 - Database: [MySQL](https://www.mysql.com/it/)
 - Mail: [Mailtrap](https://mailtrap.io/) | [Mailpit](https://mailpit.axllent.org/)
 #### Per installare Mailpit su Windows: [QUI](https://github.com/axllent/mailpit/releases)
-#### Comando per eseguire Mailpit
+#### Comando per eseguire, sul server, Mailpit
 ```bash
 mailpit
 ```
