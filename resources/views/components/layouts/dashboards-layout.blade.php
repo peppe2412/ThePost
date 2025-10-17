@@ -9,14 +9,7 @@
 </head>
 
 <body>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-12 col-md-10 col-lg-10">
-                <a class="btn btn-info fs-5 text-uppercase fw-bold" href="{{ route('home') }}">
-                    <span><i class="bi bi-arrow-left"></i></span> Torna alla home</a>
-            </div>
-        </div>
-    </div>
+   <x-sidebar />
     {{ $slot }}
 </body>
 

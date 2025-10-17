@@ -6,6 +6,38 @@
     font-family: "Inconsolata", monospace;
 }
 
+.sidebar-container{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sidebar-container a{
+    transition: 0.2s;
+}
+
+.sidebar-container a:hover{
+    text-decoration: underline;
+}
+
+.button-sidebar{
+    border: 1px solid rgb(77, 73, 73);
+    border-radius: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: 0.3s;
+}
+
+.button-sidebar:hover{
+    background-color: rgba(229, 229, 229, 0.514);
+}
+
+.button-dropdown{
+    background-color: transparent;
+    border: none;
+}
+
 .alert-dasboards-box {
     display: flex;
     justify-content: center;

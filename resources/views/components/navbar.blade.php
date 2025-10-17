@@ -8,7 +8,8 @@
                     <input class="bg-white rounded-s-xl p-4 w-[700px] border border-gray-700" name="query" type="search"
                         placeholder="Cerca articolo">
                     @error('query')
-                        <span class="text-red-500 text-2xl bottom-16 absolute effect-error-search">{{ $message }}</span>
+                        <span
+                            class="text-red-500 text-2xl bottom-16 absolute effect-error-search">{{ $message }}</span>
                     @enderror
                     <button class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700"
                         type="submit"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -31,6 +32,10 @@
                 <li>
                     <a href="{{ route('article-index') }}"
                         class="h-14 flex items-center lg:text-lg text-xl tw-hover-underline-nav">Articoli</a>
+                </li>
+                <li>
+                    <a href="{{ route('careers') }}"
+                        class="h-14 flex items-center lg:text-lg text-xl tw-hover-underline-nav">Lavora con noi</a>
                 </li>
                 @guest
                     <li>
@@ -135,7 +140,6 @@
                         <div id="dropdown"
                             class="hidden absolute right-0 mt-2 w-40 py-2 bg-white border rounded shadow-2xl">
                             <div class="text-center text-lg">
-                                {{-- <a href="" class="block mb-1 tw-dropdown-auth">Area riservata</a> --}}
                                 @if (Auth::user()->is_admin)
                                     <a href="{{ route('admin-dashboard') }}" class="block mb-1 tw-dropdown-auth">Area
                                         riservata
