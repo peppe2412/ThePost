@@ -7,8 +7,15 @@
     </header>
 
     @if (session('status') == 'verification-link-sent')
-        <div class="flex justify-center py-8">
-            <div class="tw-message-span">
+        <div class="relative">
+            <div class="email-verification-message">
+                <span class="text-green-400 absolute top-2 left-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </span>
                 E' stata reinviata l'email di verifica!
             </div>
         </div>
@@ -25,5 +32,16 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let emailVerification = document.querySelector(".email-verification-message");
+
+            if (emailVerification) {
+                const audio = new Audio("{{asset('sounds/request-email-verification.mp3')}}");
+                audio.play();
+            }
+        });
+    </script>
 
 </x-layouts.layout>

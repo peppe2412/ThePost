@@ -119,6 +119,16 @@
     font-size: large;
 }
 
+.email-verification-message{
+    position: fixed;
+    background-color: white;
+    top: 80vh;
+    left: 20px;
+    box-shadow: 1px 2px 4px 1px rgb(193, 193, 193);
+    padding: 40px;
+    font-size: larger;
+}
+
 .auth-error-box {
     width: 400px;
     box-shadow: 1px 2px 4px 1px rgb(193, 193, 193);
