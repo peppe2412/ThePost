@@ -97,6 +97,15 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let error_notification = document.querySelector('.auth-error-box')
 
+            if (error_notification) {
+                const audio = new Audio("{{ asset('sounds/error-notification.mp3') }}")
+                audio.play()
+            }
+        })
+    </script>
 
 </x-layouts.layout>
