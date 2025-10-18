@@ -113,12 +113,30 @@
     }
 }
 
-.auth-error{
-    color: #ce0303;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    font-size: xx-large;
+.auth-error-box{
+    width: 400px;
+    box-shadow: 1px 2px 4px 1px rgb(193, 193, 193);
+    position: fixed;
+    top: 50vh;
+    left: 15px;
+    background-color: white;
+    z-index: 1;
+    animation: auth-error-animation 0.5s ease-out;
+}
+
+@keyframes auth-error-animation{
+    from{
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    to{
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+#button-error-close{
+
 }
 
 .effect-error-search{

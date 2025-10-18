@@ -5,17 +5,16 @@ namespace App\Providers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
-use Illuminate\Support\Facades\Auth;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\RateLimiting\Limit;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use Illuminate\Support\Facades\RateLimiter;
-use App\Actions\Fortify\UpdateUserProfileInformation;
-use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Http\Responses\LogoutResponse;
+use App\Actions\Fortify\UpdateUserProfileInformation;
+use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -24,23 +23,24 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(RegisterResponse::class, function(){
-            return new class implements RegisterResponse{
+        $this->app->singleton(RegisterResponse::class, function () {
+            return new class implements RegisterResponse {
                 public function toResponse($request)
                 {
-                    if($request->user()->hasVerifiedEmail()){
+                    if ($request->user()->hasVerifiedEmail()) {
                         return redirect()->intended('/');
-                    }else{
-                        return redirect(route('verification.notice'));
+                    } else {
+                        return redirect()->route('verification.notice');
                     }
                 }
             };
         });
 
-        $this->app->singleton(LogoutResponse::class, function(){
-            return new class extends LogoutResponse{
-                public function toResponse($request){
-                    return redirect('/?logout=1');
+        $this->app->singleton(LogoutResponse::class, function () {
+            return new class extends LogoutResponse {
+                public function toResponse($request)
+                {
+                    return redirect()->to('/?logout=1');
                 }
             };
         });
@@ -69,30 +69,33 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::loginView(function () {
             $title = 'Login';
-            return view('auth.login', compact('title'));
+            return view('auth.login', ['title' => $title]);
         });
 
         Fortify::registerView(function () {
             $title = 'Registrazione';
-            return view('auth.register', compact('title'));
+            return view('auth.register', ['title' => $title]);
         });
 
         Fortify::verifyEmailView(function () {
-            if(auth()->check() && auth()->user()->hasVerifiedEmail()){
-                return redirect('/?verified=1');
+            if (auth()->check() && auth()->user()->hasVerifiedEmail()) {
+                return redirect()->to('/?verified=1');
             }
             $title = 'Verifica email';
-            return view('auth.verify-email', compact('title'));
+            return view('auth.verify-email', ['title' => $title]);
         });
 
         Fortify::requestPasswordResetLinkView(function () {
             $title = 'Richiesta reset password';
-            return view('auth.forgot-password', compact('title'));
+            return view('auth.forgot-password', ['title' => $title]);
         });
 
         Fortify::resetPasswordView(function (Request $request) {
             $title = 'Nuova password';
-            return view('auth.reset-password', ['request' => $request], ['title' => $title]);
+            return view('auth.reset-password', [
+                'request' => $request,
+                'title' => $title
+            ]);
         });
     }
 }
