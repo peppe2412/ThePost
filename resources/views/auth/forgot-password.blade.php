@@ -9,7 +9,24 @@
     @endif
 
     @if ($errors->any())
-        <div class="auth-error">
+        <div class="auth-error-box p-7">
+            <div class="flex">
+                <span class="text-red-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-7">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                    </svg>
+                </span>
+                <div class="flex justify-end w-[100%]">
+                    <button class="cursor-pointer hover:bg-gray-100 p-[5px]" id="button-error-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
             @foreach ($errors->all() as $error)
                 {{ $error }}
             @endforeach
@@ -38,5 +55,16 @@
         </div>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let error_notification = document.querySelector('.auth-error-box')
+
+            if (error_notification) {
+                const audio = new Audio("{{ asset('sounds/error-notification.mp3') }}")
+                audio.play()
+            }
+        })
+    </script>
 
 </x-layouts.layout>
