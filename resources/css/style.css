@@ -113,7 +113,13 @@
     }
 }
 
-.auth-error-box{
+.logout-span {
+    box-shadow: 1px 2px 4px 1px rgb(193, 193, 193);
+    padding: 40px;
+    font-size: large;
+}
+
+.auth-error-box {
     width: 400px;
     box-shadow: 1px 2px 4px 1px rgb(193, 193, 193);
     position: fixed;
@@ -124,31 +130,36 @@
     animation: auth-error-animation 0.5s ease-out;
 }
 
-@keyframes auth-error-animation{
-    from{
+@media (max-width: 768px) {
+    .auth-error-box {
+        position: static;
+        margin-top: 20px;
+        width: 300px;
+        margin-inline-start: 20px;
+    }
+}
+
+@keyframes auth-error-animation {
+    from {
         transform: translateZ(-700px);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateZ(0);
         opacity: 1;
     }
 }
 
-#button-error-close{
-
-}
-
-.effect-error-search{
+.effect-error-search {
     animation: effect-error-search 0.3s ease-out;
 }
 
-@keyframes effect-error-search{
-    from{
+@keyframes effect-error-search {
+    from {
         opacity: 0;
         transform: translateZ(-200px);
     }
-    to{
+    to {
         opacity: 1;
         transform: translateZ(0);
     }

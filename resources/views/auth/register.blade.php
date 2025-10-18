@@ -21,7 +21,7 @@
                 </div>
             </div>
             @foreach ($errors->all() as $error)
-                <div class="mt-5 text-xl text-center">{{ $error }}</div>
+                {{ $error }}
             @endforeach
         </div>
     @endif
