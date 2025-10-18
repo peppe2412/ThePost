@@ -17,7 +17,7 @@
     @endif
 
     <main class="fs-tables">
-        <div class="container py-5">
+        <div class="container py-5" id="admin-request">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <h2 class="text-center mb-5">
@@ -32,7 +32,7 @@
             </div>
         </div>
     
-        <div class="container py-5">
+        <div class="container py-5" id="revisor-request">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <h2 class="text-center mb-5">
@@ -47,7 +47,7 @@
             </div>
         </div>
     
-        <div class="container py-5">
+        <div class="container py-5" id="writer-request">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <h2 class="text-center mb-5">

@@ -28,9 +28,9 @@
                         </button>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Richieste Admin</a></li>
-                            <li><a class="dropdown-item" href="#">Richieste Revisor</a></li>
-                            <li><a class="dropdown-item" href="#">Richieste Writer</a></li>
+                            <li><a class="dropdown-item" href="#admin-request">Richieste Admin</a></li>
+                            <li><a class="dropdown-item" href="#revisor-request">Richieste Revisor</a></li>
+                            <li><a class="dropdown-item" href="#writer-request">Richieste Writer</a></li>
                         </ul>
                     </li>
                 @endif
