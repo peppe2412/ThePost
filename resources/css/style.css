@@ -2,6 +2,39 @@
     font-family: "Walter Turncoat", cursive;
 }
 
+.main-navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  animation: navbar-scroll 1s ease-in-out; 
+}
+
+@keyframes navbar-scroll{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.form-container{
+    width: 100px;
+}
+
+.input-search{
+    border-radius: 0;
+    padding: 15px;
+}
+
+.button-search{
+    border-radius: 0;
+}
+
+.list-nav{
+    margin-top: 0;
+}
+
 .google-auth {
     transition: 0.5s;
 }

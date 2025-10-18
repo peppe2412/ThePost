@@ -1,17 +1,17 @@
-<nav class="bg-white border-gray-200 shadow">
+<nav class="bg-white border-gray-200 shadow" id="navbar">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <h4 class="text-5xl mb-4 fs-main">The Post</h4>
-        <div class="w-full py-8">
+        <div class="w-full py-8" id="form-container">
             <form action="{{ route('article-search') }}" method="GET">
                 @csrf
                 <div class="flex justify-center relative">
                     <input class="bg-white rounded-s-xl p-4 w-[700px] border border-gray-700" name="query" type="search"
-                        placeholder="Cerca articolo">
+                        placeholder="Cerca articolo" id="input-search">
                     @error('query')
                         <span
                             class="text-red-500 text-2xl bottom-16 absolute effect-error-search">{{ $message }}</span>
                     @enderror
-                    <button class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700"
+                    <button id="button-search" class="bg-white rounded-e-xl w-[70px] p-4 cursor-pointer border border-gray-700"
                         type="submit"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="size-7">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,7 +21,7 @@
                 </div>
             </form>
         </div>
-        <div class="text-sm w-full md:text-lg md:block md:w-auto mt-7" id="navbar-default">
+        <div class="text-sm w-full md:text-lg md:block md:w-auto mt-7" id="navbar-list">
             <ul
                 class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
                 <li>
@@ -138,7 +138,7 @@
                             @endif
                         </button>
                         <div id="dropdown"
-                            class="hidden absolute right-0 mt-2 w-40 py-2 bg-white border rounded shadow-2xl">
+                            class="hidden z-40 absolute right-0 mt-2 w-40 py-2 bg-white border rounded shadow-2xl">
                             <div class="text-center text-lg">
                                 @if (Auth::user()->is_admin)
                                     <a href="{{ route('admin-dashboard') }}" class="block mb-1 tw-dropdown-auth">Area

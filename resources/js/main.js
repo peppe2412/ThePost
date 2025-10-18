@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Navbar
+    let elements = [
+       { element: document.querySelector('#navbar'), class: 'main-navbar'},
+       { element: document.querySelector('#form-container'), class: 'form-container'},
+       { element: document.querySelector('#navbar-list'), class: 'list-nav'},
+       { element: document.querySelector('#input-search'), class: 'input-search'},
+       { element: document.querySelector('#button-search'), class: 'button-search'}
+    ]
+
+    window.addEventListener('scroll', () => {
+        if(window.innerWidth >= 1024){
+            elements.forEach(item => {
+                if(window.scrollY > 0){
+                    item.element.classList.add(item.class)
+                } else {
+                    item.element.classList.remove(item.class)
+                }
+            })
+        }
+    })
+
     // Dropdown navbar
     function toggleDropdown() {
         let dropdown = document.querySelector("#dropdown");
